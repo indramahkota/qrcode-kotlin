@@ -108,6 +108,8 @@ kotlin {
             tvosX64(),
             tvosArm64(),
             tvosSimulatorArm64(),
+            macosX64(),
+            macosArm64(),
         ).forEach {
             it.binaries.framework {
                 baseName = "qrcode_kotlin"
@@ -116,7 +118,17 @@ kotlin {
         }
     }
 
+    linuxX64()
+    linuxArm64()
+    mingwX64()
+
     sourceSets {
+        // macOS, Linux and Windows share the pure Kotlin raster backend.
+        val rasterMain by creating { dependsOn(commonMain.get()) }
+        matching { it.name in setOf("macosMain", "linuxMain", "mingwMain") }.configureEach {
+            dependsOn(rasterMain)
+        }
+
         commonTest {
             dependencies {
                 implementation(kotlin("test"))

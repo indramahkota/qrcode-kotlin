@@ -21,7 +21,7 @@ that we can provide a better library/API for them. Please, feel free to share if
   so this library tries to generate good-looking QRCodes by default.
 * **Server friendly:** The JVM version is mainly focused on a personal use-case where I needed to generate QRCodes on
   the backend, but all libraries I found were either complex or huge, usually both.
-* **Multiplatform:** This is a KMP library with support to Java, JavaScript, Android, iOS and tvOS.
+* **Multiplatform:** This is a KMP library with support to Java, JavaScript, Android, iOS, tvOS, macOS, Linux and Windows.
 
 ## Table of Contents
 
